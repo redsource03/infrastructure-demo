@@ -3,6 +3,7 @@
 ## Pre-requisite
 
 ```brew package manager```
+
 ```docker```
 
 ## Install minikube as your local cluster
@@ -43,5 +44,9 @@ username: admin
 password: ```kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo```
 
 Deploy application.yaml:```kubectl apply -f application.yaml```
+
+## How to access pods shell
+
+```kubectl exec --stdin --tty {pod-name} --n {namespace} -- /bin/bash```
 
 
