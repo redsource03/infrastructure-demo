@@ -4,5 +4,3 @@ metadata:
   name: local-storage
 provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer
-parameters:
-  path: /Users/paulvincentcabunilas/Documents/pro_code/infrastructure-demo/dockerVolumes

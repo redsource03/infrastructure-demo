@@ -20,13 +20,26 @@ mkdir dockerVolumes/kafka/data
 cp resource/kafka.keystore.jks dockerVolumes/kafka/secrets/kafka.keystore.jks
 cp resource/kafka.truststore.jks dockerVolumes/kafka/secrets/kafka.truststore.jks
 
-cat  << EOT >> develop/storage-class.yaml
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
+cat  << EOT >> develop/local-persistent-volume.yaml
+apiVersion: v1
+kind: PersistentVolume
 metadata:
-  name: local-storage
-provisioner: kubernetes.io/no-provisioner
-volumeBindingMode: WaitForFirstConsumer
-parameters:
-  path: $WORK_DIR/dockerVolumes
+  name: local-pv
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  local:
+    path: $WORK_DIR/dockerVolumes
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - minikube
 EOT
