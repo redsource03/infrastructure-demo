@@ -48,7 +48,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: node-pv-03
+  name: node-pv-04
 spec:
   capacity:
     storage: 2Gi
@@ -56,9 +56,8 @@ spec:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
-  hostPath:
+  local:
     path: /mount
-    type: DirectoryOrCreate
   nodeAffinity:
     required:
       nodeSelectorTerms:
