@@ -4,9 +4,8 @@ metadata:
   name: mongo-pv-claim
 spec:
   storageClassName: local-storage
-  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
+      storage: 1Gi
