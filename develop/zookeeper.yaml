@@ -30,7 +30,7 @@ spec:
           - mountPath: "/datalog"
             name: mongo-pv-storage
             subPath: zookeeper/datalog
-          - mountPath: "logs"
+          - mountPath: "/logs"
             name: mongo-pv-storage
             subPath: zookeeper/logs
 ---
