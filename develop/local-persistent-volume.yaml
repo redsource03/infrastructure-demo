@@ -10,7 +10,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
-    path: /data
+    path: /data/dockerVolumes
   nodeAffinity:
     required:
       nodeSelectorTerms:

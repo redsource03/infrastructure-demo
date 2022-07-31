@@ -14,7 +14,7 @@ https://minikube.sigs.k8s.io/docs/start/
 
 ### Running minikube
 
-```minikube start --nodes 2 -p infra-demo --driver=docker```
+```minikube start --nodes 2 --driver=docker```
 
 ## Installing & Deploying ARGO CD
 
@@ -48,5 +48,9 @@ Deploy application.yaml:```kubectl apply -f application.yaml```
 ## How to access pods shell
 
 ```kubectl exec --stdin --tty {pod-name} --n {namespace} -- /bin/bash```
+
+## Mount local drive to minikube
+
+```minikube mount dockerVolumes:/data/dockerVolumes```
 
 

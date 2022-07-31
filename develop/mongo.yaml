@@ -37,8 +37,10 @@ spec:
         volumeMounts:
           - mountPath: "/data/configdb"
             name: mongo-pv-storage
+            subPath: mongo/configdb
           - mountPath: "/data/db"
             name: mongo-pv-storage
+            subPath: mongo/db
      
 ---
 apiVersion: v1
