@@ -33,7 +33,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   hostPath:
-    path: /tmp/data
+    path: /tmp/data002
     type: DirectoryOrCreate
   nodeAffinity:
     required:
