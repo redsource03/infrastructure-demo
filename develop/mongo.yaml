@@ -19,7 +19,7 @@ spec:
       volumes:
         - name: mongo-pv-storage
           persistentVolumeClaim:
-            claimName: mongo-pv-claim3
+            claimName: mongo-pv-claim
       containers:
       - name: mongodb
         image: mongo:5.0
@@ -39,10 +39,8 @@ spec:
         volumeMounts:
           - mountPath: "/data/configdb"
             name: mongo-pv-storage
-            subPath: mongo/configdb
           - mountPath: "/data/db"
             name: mongo-pv-storage
-            subPath: mongo/db
      
 ---
 apiVersion: v1
@@ -60,11 +58,11 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mongo-pv-claim3
+  name: mongo-pv-claim
 spec:
   storageClassName: local-storage
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 3Gi
+      storage: 1Gi

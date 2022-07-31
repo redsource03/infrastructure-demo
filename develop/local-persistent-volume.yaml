@@ -43,26 +43,3 @@ spec:
           operator: In
           values:
           - minikube
-
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: node-pv-05
-spec:
-  capacity:
-    storage: 3Gi
-  accessModes:
-  - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: local-storage
-  local:
-    path: /tmp/mount
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - minikube
