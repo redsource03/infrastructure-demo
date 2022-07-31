@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: develop
-    repoURL: 'https://github.com/redsource03/infrastructure-demo.git'
+    repoURL: 'git@github.com:redsource03/infrastructure-demo.git'
     targetRevision: HEAD
   project: default
   syncPolicy:

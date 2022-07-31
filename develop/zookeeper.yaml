@@ -17,7 +17,7 @@ spec:
       volumes:
         - name: mongo-pv-storage
           persistentVolumeClaim:
-            claimName: mongo-pv-claim
+            claimName: zookeeper-pv-claim
       containers:
       - name: zookeeper
         image: zookeeper:latest
@@ -49,7 +49,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mongo-pv-claim
+  name: zookeeper-pv-claim
 spec:
   storageClassName: local-storage
   accessModes:
