@@ -4,6 +4,7 @@ metadata:
   name: mongo-pv-claim
 spec:
   storageClassName: local-storage
+  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   resources:
