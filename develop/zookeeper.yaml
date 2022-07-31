@@ -17,7 +17,7 @@ spec:
       securityContext:
         runAsUser: 0
       volumes:
-        - name: mongo-pv-storage
+        - name: zookeeper-pv-storage
           persistentVolumeClaim:
             claimName: zookeeper-pv-claim
       containers:
@@ -27,14 +27,12 @@ spec:
         - containerPort: 2181
         volumeMounts:
           - mountPath: "/data"
-            name: mongo-pv-storage
-            subPath: data
+            name: zookeeper-pv-storage
           - mountPath: "/datalog"
-            name: mongo-pv-storage
+            name: zookeeper-pv-storage
             subPath: datalog
           - mountPath: "/logs"
-            name: mongo-pv-storage
-            subPath: logs
+            name: zookeeper-pv-storage
 ---
 apiVersion: v1
 kind: Service
