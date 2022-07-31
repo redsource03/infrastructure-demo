@@ -15,7 +15,6 @@ spec:
         app: mongo
     spec:
       securityContext:
-        allowPrivilegeEscalation: false
         runAsUser: 0
       volumes:
         - name: mongo-pv-storage
