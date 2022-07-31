@@ -14,8 +14,6 @@ spec:
       labels:
         app: zookeeper
     spec:
-      securityContext:
-        runAsUser: 0
       volumes:
         - name: zookeeper-pv-storage
           persistentVolumeClaim:

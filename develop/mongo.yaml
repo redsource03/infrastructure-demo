@@ -14,8 +14,6 @@ spec:
       labels:
         app: mongo
     spec:
-      securityContext:
-        runAsUser: 0
       volumes:
         - name: mongo-pv-storage
           persistentVolumeClaim:
