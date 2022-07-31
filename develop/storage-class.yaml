@@ -3,11 +3,6 @@ kind: StorageClass
 metadata:
   name: local-storage
 provisioner: kubernetes.io/no-provisioner
-volumeBindingMode: WaitForFirstConsumerapiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: local-storage
-provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer
 parameters:
   path: /Users/paulvincentcabunilas/Documents/pro_code/infrastructure-demo/dockerVolumes
