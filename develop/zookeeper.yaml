@@ -26,13 +26,13 @@ spec:
         volumeMounts:
           - mountPath: "/data"
             name: mongo-pv-storage
-            subPath: zookeeper/data
+            subPath: data
           - mountPath: "/datalog"
             name: mongo-pv-storage
-            subPath: zookeeper/datalog
+            subPath: datalog
           - mountPath: "/logs"
             name: mongo-pv-storage
-            subPath: zookeeper/logs
+            subPath: logs
 ---
 apiVersion: v1
 kind: Service

@@ -10,7 +10,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
-    path: /data/dockerVolumes
+    path: /data/dockerVolumes/zookeeper
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -32,7 +32,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
-    path: /data/dockerVolumes
+    path: /data/dockerVolumes/mongo
   nodeAffinity:
     required:
       nodeSelectorTerms:
