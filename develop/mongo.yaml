@@ -35,9 +35,7 @@ spec:
               name: mongo-secret
               key: mongo-password 
         volumeMounts:
-          - mountPath: "/data/configdb"
-            name: mongo-pv-storage
-          - mountPath: "/data/db"
+          - mountPath: "/data"
             name: mongo-pv-storage
      
 ---
