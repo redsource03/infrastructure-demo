@@ -19,7 +19,7 @@ spec:
       volumes:
         - name: mongo-pv-storage
           persistentVolumeClaim:
-            claimName: mongo-pv-claim2
+            claimName: mongo-pv-claim3
       containers:
       - name: mongodb
         image: mongo:5.0
@@ -60,7 +60,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mongo-pv-claim2
+  name: mongo-pv-claim3
 spec:
   storageClassName: local-storage
   accessModes:
