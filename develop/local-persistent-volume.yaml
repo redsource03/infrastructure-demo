@@ -4,7 +4,7 @@ metadata:
   name: local-pv
 spec:
   capacity:
-    storage: 10Gi
+    storage: 1Gi
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
@@ -18,4 +18,4 @@ spec:
         - key: kubernetes.io/hostname
           operator: In
           values:
-          - k8s-worker-01
+          - mongo
