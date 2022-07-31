@@ -48,10 +48,10 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: node-pv-04
+  name: node-pv-05
 spec:
   capacity:
-    storage: 2Gi
+    storage: 3Gi
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
