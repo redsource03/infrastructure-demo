@@ -57,7 +57,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
-    path: /mount
+    path: /tmp/mount
   nodeAffinity:
     required:
       nodeSelectorTerms:
