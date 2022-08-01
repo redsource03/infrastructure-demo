@@ -53,4 +53,9 @@ Deploy application.yaml:```kubectl apply -f application.yaml```
 
 ```minikube mount dockerVolumes:/data/dockerVolumes```
 
+## Adding CNI to minikube
+
+```minikube start --network-plugin=cni --cni=calico```
+
+```kubectl get pods -l k8s-app=calico-node -A```
 
