@@ -66,4 +66,3 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeName: node-pv-02    
