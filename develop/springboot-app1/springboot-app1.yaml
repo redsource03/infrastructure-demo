@@ -18,7 +18,7 @@ spec:
       - name: springboot-app1
         image: redsource/springboot-app1:1.0.0-ccb8c86f8bc3
         ports:
-        - containerPort: 8083
+        - containerPort: 8080
         env:
         - name: KAFKA_URL
           valueFrom:
@@ -52,5 +52,5 @@ spec:
   ports:
     - protocol: TCP
       port: 8083
-      targetPort: 8083
+      targetPort: 8080
 ---
