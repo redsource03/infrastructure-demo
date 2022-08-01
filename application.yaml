@@ -11,6 +11,8 @@ spec:
     path: develop
     repoURL: 'https://github.com/redsource03/infrastructure-demo.git'
     targetRevision: HEAD
+    directory:
+      recurse: true
   project: default
   syncPolicy:
     automated:
