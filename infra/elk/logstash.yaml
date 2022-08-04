@@ -24,6 +24,9 @@ spec:
         image: logstash:8.3.3
         ports:
         - containerPort: 5000
+        env:
+        - name: XPACK_MONITORING_ENABLED
+          value: "false"
         volumeMounts:
         - name: logstash-config-file
           mountPath: /usr/share/logstash/pipeline
