@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-app1
+  labels:
+    app: springboot-app1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot-app1
+  template:
+    metadata:
+      labels:
+        app: springboot-app1
+    spec:
+      containers:
+      - name: springboot-app1
+        image: redsource/springboot-app1:1.0.0-ccb8c86f8bc3
+        ports:
+        - containerPort: 8080
+        env:
+        - name: KAFKA_URL
+          valueFrom:
+            configMapKeyRef:
+              name: kafka-config
+              key: kafka-url
+        - name: MONGO_USER
+          valueFrom:
+            secretKeyRef:
+              name: secret
+              key: mongo-user
+        - name: MONGO_PW
+          valueFrom:
+            secretKeyRef:
+              name: secret
+              key: mongo-password
+        - name: MONGO_URL
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: mongo-url
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-app1-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: springboot-app1
+  ports:
+    - protocol: TCP
+      port: 8083
+      targetPort: 8080
+---

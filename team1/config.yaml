@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+data:
+  mongo-url:  mongo-service.infra.svc.cluster.local:27017
+  kafka-url:  kafka-service.infra.svc.cluster.local:9092

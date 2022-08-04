@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+data:
+  zookeeper-url:  zookeeper-service
+  kafka-url:  kafka-service.demo.svc.cluster.local:9092
