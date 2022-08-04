@@ -22,7 +22,7 @@ spec:
         - containerPort: 8080
         env:
         - name: LOGSTASH_URL
-          value: logstash-service.inra.svc.cluster.local
+          value: logstash-service.inra.svc.cluster.local:5000
         - name: KAFKA_URL
           valueFrom:
             configMapKeyRef:
