@@ -20,7 +20,7 @@ spec:
             claimName: elastisearch-pv-claim
       containers:
       - name: elastisearch
-        image: elastisearch:8.3.3
+        image: elasticsearch:8.3.3
         ports:
         - containerPort: 9200
         env:
