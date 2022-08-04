@@ -24,7 +24,7 @@ data:
         }
       }
       output {
-        elasticsearch { hosts => ["elastisearch-service.infra.svc.cluster.local:9200] }
+        elasticsearch { hosts => ["elastisearch-service.infra.svc.cluster.local:9200"] }
         stdout { codec => rubydebug }
       }
 kind: ConfigMap
