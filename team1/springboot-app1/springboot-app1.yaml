@@ -50,7 +50,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: infra
+  namespace: team1
   name: springboot-app1-service
 spec:
   type: LoadBalancer
