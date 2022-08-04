@@ -15,6 +15,10 @@ spec:
       labels:
         app: logstash
     spec:
+      volumes:
+        - name: logstash-config-file
+          configMap:
+            name: logstash-configmap
       containers:
       - name: logstash
         image: logstash:8.3.3
@@ -23,6 +27,10 @@ spec:
         env:
         - name: ELASTICSEARCH_HOSTS
           value: http://elastisearch-service.infra.svc.cluster.local:9200
+        volumeMounts:
+        - name: logstash-configmap
+          mountPath: /usr/share/logstash/pipeline/logstash.conf
+        
 ---
 apiVersion: v1
 kind: Service
