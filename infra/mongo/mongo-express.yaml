@@ -41,6 +41,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: infra
   name: mongo-express-service
 spec:
   type: LoadBalancer

@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: infra
   name: mongo-deployment
   labels:
     app: mongo
@@ -59,6 +60,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
+  namespace: infra
   name: mongo-pv-claim
 spec:
   storageClassName: local-storage
