@@ -6,3 +6,4 @@ metadata:
 data:
   mongo-url:  mongo-service.infra.svc.cluster.local:27017
   kafka-url:  kafka-service.infra.svc.cluster.local:9092
+  logstash-url: logstash-service.infra.svc.cluster.local:5000
