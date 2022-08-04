@@ -17,10 +17,12 @@ spec:
     spec:
       containers:
       - name: springboot-app1
-        image: redsource/springboot-app1:1.0.0-4da75e13ec12
+        image: redsource/springboot-app1:1.0.0-740a43c2e4d5
         ports:
         - containerPort: 8080
         env:
+        -name: LOGSTASH_URL
+         value: logstash-service.inra.svc.cluster.local
         - name: KAFKA_URL
           valueFrom:
             configMapKeyRef:
