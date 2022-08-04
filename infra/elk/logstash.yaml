@@ -27,9 +27,6 @@ spec:
         env:
         - name: ELASTICSEARCH_HOSTS
           value: http://elastisearch-service.infra.svc.cluster.local:9200
-        volumeMounts:
-        - name: logstash-configmap
-          mountPath: /usr/share/logstash/pipeline/logstash.conf
         
 ---
 apiVersion: v1
