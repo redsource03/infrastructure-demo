@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: springboot-app1
-        image: redsource/springboot-app1:1.0.0-ccb8c86f8bc3
+        image: redsource/springboot-app1:1.0.0-4da75e13ec12
         ports:
         - containerPort: 8080
         env:
