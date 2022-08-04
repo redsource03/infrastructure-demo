@@ -35,7 +35,6 @@ metadata:
   namespace: infra
   name: logstash-service
 spec:
-  type: LoadBalancer
   selector:
     app: logstash
   ports:
