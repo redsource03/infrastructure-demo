@@ -24,9 +24,9 @@ spec:
         image: logstash:8.3.3
         ports:
         - containerPort: 5000
-        env:
-        - name: monitoring.elasticsearch.hosts
-          value: http://elastisearch-service.infra.svc.cluster.local:9200
+        volumeMounts:
+        - name: logstash-config-file
+          mountPath: /usr/share/logstash/pipeline/logstash.conf
         
 ---
 apiVersion: v1
@@ -35,7 +35,6 @@ metadata:
   namespace: infra
   name: logstash-service
 spec:
-  type: LoadBalancer
   selector:
     app: logstash
   ports:
