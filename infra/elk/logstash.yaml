@@ -25,7 +25,7 @@ spec:
         ports:
         - containerPort: 5000
         env:
-        - name: ELASTICSEARCH_HOSTS
+        - name: monitoring.elasticsearch.hosts
           value: http://elastisearch-service.infra.svc.cluster.local:9200
         
 ---
