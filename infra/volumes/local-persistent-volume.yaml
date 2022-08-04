@@ -9,7 +9,7 @@ spec:
     apiVersion: v1
     kind: PersistentVolumeClaim
     name: zookeeper-pv-claim
-    namespace: demo
+    namespace: infra
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
@@ -37,7 +37,7 @@ spec:
     apiVersion: v1
     kind: PersistentVolumeClaim
     name: mongo-pv-claim
-    namespace: demo
+    namespace: infra
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
