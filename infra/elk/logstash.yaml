@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: infra
+  name: logstash
+  labels:
+    app: logstash
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logstash
+  template:
+    metadata:
+      labels:
+        app: logstash
+    spec:
+      containers:
+      - name: logstash
+        image: logstash:8.3.3
+        command: [ "sh", "-c"]
+        args:
+        - echo 'input{udp{port=>"5000"type=>syslogcodec=>json}tcp{port=>"5000"type=>syslogcodec=>json_lines}http{port=>"5001"codec=>"json"}}filter{if[type]=="syslog"{mutate{add_field=>{"instance_name"=>"%{app_name}-%{host}:%{app_port}"}}}}output{elasticsearch{hosts=>["${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT}"]index=>"logs-%{+YYYY.MM.dd}"}}' > /usr/share/logstash/pipeline/logstash.conf
+        ports:
+        - containerPort: 5000
+        env:
+        - name: ELASTICSEARCH_HOSTS
+          value: http://elastisearch-service.infra.svc.cluster.local:9200
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: logstash-service
+spec:
+  selector:
+    app: logstash
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
