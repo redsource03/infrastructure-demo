@@ -22,11 +22,6 @@ spec:
         env:
         - name: ELASTICSEARCH_HOSTS
           value: elastisearch-service.infra.svc.cluster.local:9200
-        - name: xpack.security.enabled
-          value: 'false'
-        volumeMounts:
-          - mountPath: "/usr/share/kibana/data"
-            name: kibana-pv-storage
 ---
 apiVersion: v1
 kind: Service
