@@ -26,7 +26,7 @@ spec:
         - containerPort: 5000
         volumeMounts:
         - name: logstash-config-file
-          mountPath: /usr/share/logstash/pipeline
+          mountPath: /usr/share/logstash/config
         
 ---
 apiVersion: v1

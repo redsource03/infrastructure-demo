@@ -23,11 +23,9 @@ data:
           add_tag => [ "logstash_filter_applied" ]
         }
       }
-
       output {
-        elasticsearch {
-          hosts => "elastisearch-service.infra.svc.cluster.local:9200"
-        }
+        elasticsearch { hosts => ["elastisearch-service.infra.svc.cluster.local:9200] }
+        stdout { codec => rubydebug }
       }
 kind: ConfigMap
 metadata:
