@@ -2,9 +2,20 @@ apiVersion: v1
 data:
   logstash.conf : |
     input {
-        beats {
-          port => 5044
-        }
+          udp {
+              port => "5000"
+              type => syslog
+              codec => json
+          }
+          tcp {
+              port => "5000"
+              type => syslog
+              codec => json_lines
+          }
+          http {
+              port => "5001"
+              codec => "json"
+          }
       }
 
       filter {
