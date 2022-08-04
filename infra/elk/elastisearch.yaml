@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: elasticsearch
+  name: elastisearch
   labels:
-    app: elasticsearch
+    app: elastisearch
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: elasticsearch
+      app: elastisearch
   template:
     metadata:
       labels:
-        app: elasticsearch
+        app: elastisearch
     spec:
       volumes:
-        - name: elasticsearch-pv-storage
+        - name: elastisearch-pv-storage
           persistentVolumeClaim:
-            claimName: elasticsearch-pv-claim
+            claimName: elastisearch-pv-claim
       containers:
-      - name: elasticsearch
-        image: elasticsearch:8.3.3
+      - name: elastisearch
+        image: elastisearch:8.3.3
         ports:
         - containerPort: 9200
         env:
@@ -29,16 +29,16 @@ spec:
         - name: xpack.security.enabled
           value: 'false'
         volumeMounts:
-          - mountPath: "/usr/share/elasticsearch/data"
-            name: elasticsearch-pv-storage
+          - mountPath: "/usr/share/elastisearch/data"
+            name: elastisearch-pv-storage
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: elasticsearch-service
+  name: elastisearch-service
 spec:
   selector:
-    app: elasticsearch
+    app: elastisearch
   ports:
     - protocol: TCP
       port: 9200
@@ -47,7 +47,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: elasticsearch-pv-claim
+  name: elastisearch-pv-claim
 spec:
   storageClassName: local-storage
   accessModes:
