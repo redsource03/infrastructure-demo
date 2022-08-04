@@ -53,3 +53,31 @@ spec:
           operator: In
           values:
           - minikube
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: node-pv-03
+spec:
+  capacity:
+    storage: 1Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: elastisearch-pv-claim
+    namespace: infra
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  hostPath:
+    path: /tmp/data003
+    type: DirectoryOrCreate
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - minikube
