@@ -21,7 +21,7 @@ spec:
             claimName: zookeeper-pv-claim
       containers:
       - name: zookeeper
-        image: zookeeper:latest
+        image: zookeeper:3.8.0-temurin
         ports:
         - containerPort: 2181
         volumeMounts:
