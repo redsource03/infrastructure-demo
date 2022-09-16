@@ -31,11 +31,7 @@ spec:
           value: 'false'
         - name: ES_JAVA_OPTS
              value: "-Xms2G -Xmx2G" 
-          resources:
-            requests:
-              memory: 4Gi
-            limits:
-              memory: 4Gi
+
         volumeMounts:
           - mountPath: "/usr/share/elastisearch/data"
             name: elastisearch-pv-storage
