@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: team1
+  name: team1-development
 spec:
   destination:
     name: ''
-    namespace: team1
+    namespace: team1-development
     server: 'https://kubernetes.default.svc'
   source:
-    path: team1
+    path: team1-development
     repoURL: 'https://github.com/redsource03/infrastructure-demo.git'
     targetRevision: HEAD
     directory:
