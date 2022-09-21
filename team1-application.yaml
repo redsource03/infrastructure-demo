@@ -8,7 +8,7 @@ spec:
     namespace: team1-development
     server: 'https://kubernetes.default.svc'
   source:
-    path: team1-development
+    path: team1
     repoURL: 'https://github.com/redsource03/infrastructure-demo.git'
     targetRevision: HEAD
     directory:
